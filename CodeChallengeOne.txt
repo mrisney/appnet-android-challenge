@@ -1,0 +1,26 @@
+
+/*  CODE CHALLENGE - One
+App.net is an aggregator of messaging sites.  Build a viewer app for the global/public posts.
+
+Uri = "https://alpha-api.app.net/stream/0/posts/stream/global"
+
+Posts should be rendered in a vertical list, sorted by time, with the most recent at the top of the list and oldest at the bottom
+Need to control the maximum number of items in the list (based on either count or only what has arrived in the last N minutes)
+Each row should contain the user’s avatar
+Each row should contain the poster’s name in bold (and add a subtle color)
+Each row should contain the post text, and be variable height, depending on the text size
+New posts are added to the top of the list on a regular basis
+Top of the list is always displayed by default
+The list should scroll smoothly and quickly (flick up/down)
+Button to "pause" the list for reading (turn off auto-scrolling)
+App should run over night without stopping/crashing
+ */
+
+
+ Engineering Requirements:
+ - Android Studio project
+ - access App.net using Retrofit and RxJava
+ - GSON annotations
+ - latest Material Design
+ - we want to see some lambdas, using either RetroLambda or Android "N"
+ - Android "N" would be cool, but not necessary

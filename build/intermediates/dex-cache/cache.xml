@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ce7b8410e67a5b316fb0465c7071bb933e93d3fd">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2490fd03a401aafe96a10d6edb5c2e83e6f3d0fe/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.9/e4362e62f1ba92e360b197d6d7ffae67e5ecae9a/rxjava-1.1.9.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e4362e62f1ba92e360b197d6d7ffae67e5ecae9a">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.9_0365b59f5cd36e2f4bcd0e75e6bf5814bcf4dc38/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.0.1_aa002a88a89ddb68a115e1341804fcb1bd3304b5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.0.1_ee39a554c01758801a6614993e5b611e663d56c0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.1_246a424831afcbcaac98ccfdbfa585692a98df7d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.3.1_2795dac5d993135e6c94bf79c1434b8382786401/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.0.1_25d73b6c5278b451733842140773dd98d17f3643/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/io.reactivex/rxandroid/0.25.0/866b539d3ae58abbd47880f243c02f914fec5cda/rxandroid-0.25.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="866b539d3ae58abbd47880f243c02f914fec5cda">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxandroid-0.25.0_2dc6bec39ee6a2177f735b24936efb1e905ace61/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.1_7ba866ae53ceed64fb5551acf33b0897ef36ef31/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-1.9.0_d9042a8ddbd84372695d13b4d4922b769c6fb19f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="eb93cfd022d3af90cfbee2b594cf016018794a98">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8a246c866fcd9820a47221c76381eb51e3684f06/classes.dex" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/marcrisney/Projects/GithubDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.0.1_b8b257e6877df39d5ab8298533347f2013cb0e08/classes.dex" />
+    </item>
+
+</items>
