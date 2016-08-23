@@ -37,12 +37,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         super();
         mItems = new ArrayList<Datum>();
         service = ServiceFactory.createRetrofitService(AppNetService.class, AppNetService.SERVICE_ENDPOINT);
-
     }
 
     public void addData(Datum datum) {
+        if (mItems.size()==0) {
+            mItems.clear();
+            notifyDataSetChanged();
+        }
         mItems.add(datum);
-        notifyDataSetChanged();
+        notifyItemChanged(0);
+        Log.d(TAG,"number of posts in mItems : "+mItems.size());
     }
 
     public void clear() {
@@ -60,18 +64,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Post>() {
-                    @Override public void onCompleted() { }
+                        @Override public void onCompleted() { }
                     @Override public void onError(Throwable e) { }
-
                     @Override
                     public void onNext(Post post) {
-                        Log.d(TAG,"number of posts : "+ post.getData().size());
                         for (Datum datum : post.getData()) {
-                            mItems.add(datum);
+                            addData(datum);
                         }
                         Log.d(TAG,"number of items : "+ mItems.size());
-
-                        notifyDataSetChanged();
                     }
                 });
     }

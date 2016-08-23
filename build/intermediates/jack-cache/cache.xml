@@ -2,10 +2,28 @@
 <items version="2" >
 
     <item
+        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
+        revision="24.0.0"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-7097aef8d33f769a65a13150936f9f2ca4e63253.jar" />
+    </item>
+    <item
+        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        revision="24.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-3806a148d5fef937c615852fe39f324aecfa0472.jar" />
+    </item>
+    <item
         jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/io.reactivex/rxandroid/0.23.0/9c437ce12df38b57fde4e3bb38ef6859f85ff737/rxandroid-0.23.0.jar"
         revision="24.0.0"
         sha1="9c437ce12df38b57fde4e3bb38ef6859f85ff737">
         <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/rxandroid-0.23.0-c3e87c49a225d0f8cf3362f0052de5e06f65552a.jar" />
+    </item>
+    <item
+        jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar"
+        revision="24.0.0"
+        sha1="479c1e06db31c432330183f5cae684163f186146">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/javax.annotation-api-1.2-814f6544b1a9ba4cdd2e92f7e2e70a599c0e2876.jar" />
     </item>
     <item
         jar="/Users/marcrisney/Library/Android/sdk/platforms/android-23/android.jar"
@@ -14,34 +32,28 @@
         <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/runtime/android-6edf7e1a0a93bd44c28e5c4a3a0470f0532addf3.jar" />
     </item>
     <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jar="/Users/marcrisney/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
         revision="24.0.0"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-f4fa3f7dd8c260742b29f58fe353d9b7af26b5aa.jar" />
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/support-annotations-23.0.1-7ba866ae53ceed64fb5551acf33b0897ef36ef31.jar" />
     </item>
     <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
         revision="24.0.0"
-        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-84567926e276fef7402dd5502d8b7cb6de71a961.jar" />
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-a32e636626a221520c1de7201c721170b5bd02c6.jar" />
     </item>
     <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         revision="24.0.0"
-        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-b8e5a8723777484f98e2bac495cdef835bb1138e.jar" />
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-9547a737fd2914c38735ba1af7627f3b965c6513.jar" />
     </item>
     <item
-        jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
+        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         revision="24.0.0"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/support-annotations-24.0.0-b290121af9856a2de6f78319edd8e102b12937b1.jar" />
-    </item>
-    <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        revision="24.0.0"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/internal_impl-24.0.0-0db51520f4166859dd04388ef846c37ba0a0e3a1.jar" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/internal_impl-23.0.1-775b6644d22f2d5035a1599a73e3b5bc1619385f.jar" />
     </item>
     <item
         jar="/Users/marcrisney/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
@@ -60,24 +72,6 @@
         revision="24.0.0"
         sha1="a681c044244d9fc375198588297a39ba78028423">
         <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/retrofit-1.9.0-d9042a8ddbd84372695d13b4d4922b769c6fb19f.jar" />
-    </item>
-    <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
-        revision="24.0.0"
-        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-bebae4c6bb4266ebe6d535608f99a6f93a0a9ec3.jar" />
-    </item>
-    <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
-        revision="24.0.0"
-        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-adb3c5f77d73c27dd3008b67e03c81e575320864.jar" />
-    </item>
-    <item
-        jar="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.0.0/jars/classes.jar"
-        revision="24.0.0"
-        sha1="8dd49930e4f9dde1a42d37e362b9fea8b1b69c0d">
-        <dex dex="/Users/marcrisney/Projects/appnet-android-challenge/app/build/intermediates/jill/debug/packaged/classes-92669ff35c266175dbe7edf686855032134c5027.jar" />
     </item>
 
 </items>

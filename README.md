@@ -8,16 +8,18 @@ The FETCH button kicks off a series of HTTP requests to AppNet API. The HTTP req
 ![alt tag](http://randomdotnext.com/content/images/2015/05/demo-github-android.gif)
 
 #####The Setup
-Let's take care of the depency injection for retrofit and RxJava/RxAndroid:
+Let's take care of the dependency injection for retrofit and RxJava/RxAndroid,
+I've also added  javax.annotation.processing, this package appears to be missing from Android :(
 ```java
 dependencies {
-    compile 'io.reactivex:rxjava:1.0.+'
-    compile 'io.reactivex:rxandroid:0.23.+'
-    compile 'com.squareup.retrofit:retrofit:1.9.+'
+  compile 'javax.annotation:javax.annotation-api:1.2'
+  compile 'io.reactivex:rxjava:1.1.+'
+  compile 'io.reactivex:rxandroid:0.23.+'
+  compile 'com.squareup.retrofit:retrofit:1.9.+'
 }
 ```
 
-Don't forget Android App Permissions in AndroidManifest:
+Importanat that Android App Permissions in AndroidManifest is set appropriately:
 ```java
 <uses-permission android:name="android.permission.INTERNET" />
 ```
@@ -33,7 +35,7 @@ public interface AppNetService {
 }
 ```
 
-Hang on! AppNetService needs a RestAdapter implementation. In the spirit of good programming practice, I created a generic factory class to do the implementation:
+AppNetService needs a RestAdapter implementation.I created a generic factory class to do the implementation:
 ```java
 static <T> T createRetrofitService(final Class<T> clazz, final String endPoint) {
     final RestAdapter restAdapter = new RestAdapter.Builder()
@@ -45,7 +47,7 @@ static <T> T createRetrofitService(final Class<T> clazz, final String endPoint) 
 }
 ```
 
-The AppNet REST API returns the following JSON. You can try it yourself!
+The AppNet REST API returns the following JSON. Using Curl - we can get a JSON response :
 `curl https://alpha-api.app.net/stream/0/posts/stream/global`
 ```java
 {
@@ -63,7 +65,9 @@ The AppNet REST API returns the following JSON. You can try it yourself!
   //...truncated JSON
 }
 ```
-We will define the model in a separate Java file. The field variables in the model are automatically parsed from the JSON response. So you don't need to worry about writing the parsing code. Make sure that the variable names are exactly the same as API definition:
+I defined the model in separate Java files, using the jsonschema2pojo-gradle-plugin
+
+The field variables in the model are automatically parsed from the JSON response. So you don't need to worry about writing the parsing code. Make sure that the variable names are exactly the same as API definition:
 ```java
 public class Post {
 
@@ -73,8 +77,7 @@ public class Post {
     private List<Datum> data = new ArrayList<Datum>();
 }
 ```
-And you are done! Other than Java's boilerplate stuff (boo), the code is very concise and readable. If you have more than one endpoint you want to access, simply add it to your service interface at little additional cost!
-
+Other than Java's boilerplate stuff (boo), the code is very concise and readable. If you have more than one endpoint you want to access, simply add it to your service interface at little additional cost!
 
 
 #####RxJava Async Stream
@@ -105,16 +108,33 @@ subscribe = Observable.interval(5, TimeUnit.SECONDS)
                    }
                });
 ```
-That was probably a bit confusing. Let's break the code down line by line.
+The method service.getPosts() - returns the root level Post that APINet returns
 ```java
 service.getPosts()
 ```
-AppNetService Interface has the getPost method which returns an Observable. We are chaining method calls on this Observable to get the REST call response.
+AppNetService Interface has the getPost method which returns an Observable. I am using the Schedulers to repeat the call
+every 5 seconds, this is a Subscription that  = Observable.interval(5, TimeUnit.SECONDS) Observable to get the REST call response.
 ```java
-.subscribeOn(Schedulers.newThread())
-.observeOn(AndroidSchedulers.mainThread())
+subscribe = Observable.interval(5, TimeUnit.SECONDS)
+                .map(tick -> lastTick.getAndIncrement())
+                .flatMap(posts -> service.getPosts())
+                .doOnError(err -> Log.e(TAG, "Error retrieving messages" + err))
+                .retry()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Post>() {
+                    @Override public void onCompleted() { }
+                    @Override public void onError(Throwable e) { }
+                    @Override
+                    public void onNext(Post post) {
+                        for (Datum datum : post.getData()) {
+                            addData(datum);
+                        }
+                        Log.d(TAG,"number of items : "+ mItems.size());
+                    }
+                });
 ```
-These two lines specify that the REST call will be made in a new thread (YES!). And when the call response returns, it call the onNext, onError, and onComplete methods on the mainThread. The reason we need to call them on the mainThread is that only the mainThread can update the UI. If you have data that do not need to be displayed immediately, you would not need to observe on main thread. The difference between observeOn and subscribeOn is best explained in this [stackoverflow](http://stackoverflow.com/questions/20451939/observeon-and-subscribeon-where-the-work-is-being-done).
+The reason to call them on the mainThread is that only the mainThread can update the UI. If you have data that do not need to be displayed immediately, you would not need to observe on main thread. The difference between observeOn and subscribeOn is best explained in this [stackoverflow](http://stackoverflow.com/questions/20451939/observeon-and-subscribeon-where-the-work-is-being-done).
 
 ```java
 new Subscriber<Github>() {
@@ -125,7 +145,7 @@ new Subscriber<Github>() {
 
     @Override
     public final void onError(Throwable e) {
-        Log.e("GithubDemo", e.getMessage());
+        Log.e("AppNet Errror : ", e.getMessage());
     }
 
     @Override
@@ -134,11 +154,11 @@ new Subscriber<Github>() {
     }
 }
 ```
-This Subscriber responds to the Observable's stream. onNext is called when the REST call receives data. In this AppNet example, there is only 1 item, so it is only called once. When the REST response is a list, the code can be called each time an item is received. onComplete and onError behave exactly as the name implies.
+This Subscriber responds to the Observable's stream. onNext is called when the REST call receives data. In this AppNet example, there is a Post Object, that has a collection of Datum Objects. so it is only called once. When the REST response is a list, the code can be called each time an item is received. onComplete and onError behave exactly as the name implies.
 
 
-#####We are done
-Viola! We have just made our non-blocking HTTP calls on Android. Special thanks to the folks at Square and ReactiveX for making our lives easier!
+#####
+This pattern affords a non-blocking HTTP calls on Android. using  Square and ReactiveX!
 
 <br>
 #####Reference:

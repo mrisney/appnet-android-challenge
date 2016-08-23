@@ -2,7 +2,9 @@ package app.model;
 
 import com.google.gson.annotations.Expose;
 
-//@Generated("org.jsonschema2pojo")
+import javax.annotation.Generated;
+
+@Generated("org.jsonschema2pojo")
 public class Hashtag {
 
     @Expose
