@@ -48,7 +48,10 @@ static <T> T createRetrofitService(final Class<T> clazz, final String endPoint) 
 ```
 
 The AppNet REST API returns the following JSON. Using Curl - we can get a JSON response :
-```bash curl https://alpha-api.app.net/stream/0/posts/stream/global```
+```bat 
+curl https://alpha-api.app.net/stream/0/posts/stream/global
+```
+returns 
 
 ```java
 {
