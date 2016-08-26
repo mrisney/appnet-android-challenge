@@ -48,7 +48,8 @@ static <T> T createRetrofitService(final Class<T> clazz, final String endPoint) 
 ```
 
 The AppNet REST API returns the following JSON. Using Curl - we can get a JSON response :
-`curl https://alpha-api.app.net/stream/0/posts/stream/global`
+```bash curl https://alpha-api.app.net/stream/0/posts/stream/global```
+
 ```java
 {
 "meta": {
@@ -65,7 +66,7 @@ The AppNet REST API returns the following JSON. Using Curl - we can get a JSON r
   //...truncated JSON
 }
 ```
-I defined the model in separate Java files, using the [jsonschema2pojo Gradle Plugin (https://mvnrepository.com/artifact/org.jsonschema2pojo/jsonschema2pojo-gradle-plugin) 
+I defined the model in separate Java files, using the [jsonschema2pojo Gradle Plugin] (https://mvnrepository.com/artifact/org.jsonschema2pojo/jsonschema2pojo-gradle-plugin) 
 
 The field variables in the model are automatically parsed from the JSON response. So you don't need to worry about writing the parsing code. If you want to make modifications to the service, make sure that the variable names are exactly the same as API definition :
 ```java
