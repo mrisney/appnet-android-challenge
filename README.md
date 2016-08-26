@@ -19,7 +19,7 @@ dependencies {
 }
 ```
 
-Importanat that Android App Permissions in AndroidManifest is set appropriately:
+Important that the Android app permissions in AndroidManifest is set appropriately:
 ```java
 <uses-permission android:name="android.permission.INTERNET" />
 ```
