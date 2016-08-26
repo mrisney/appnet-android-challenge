@@ -1,7 +1,7 @@
 ### AppNet Android Challenge
 
 #####Introduction
-AppNet Fetch App showcases the use of Square's [Retrofit](http://square.github.io/retrofit/) and [RxJava](https://github.com/ReactiveX/RxJava/wiki) to make asynchronous HTTP Requests in Android Application. The App makes HTTP GET requests to the [App.Net API](https://alpha-api.app.net/stream/0/posts/stream/global) to retrieve **global postings** and **public postings**.
+AppNet Fetch App showcases the use of Square's [Retrofit](http://square.github.io/retrofit/) and [RxJava](https://github.com/ReactiveX/RxJava/wiki) to make asynchronous HTTP Requests in Android Application. The App makes **HTTP GET** requests to the [App.Net API](https://alpha-api.app.net/stream/0/posts/stream/global) to retrieve **global postings** and **public postings**.
 
 The FETCH button kicks off a series of HTTP requests to AppNet API. The HTTP requests are built via Retrofit. The calls are made asynchronously through RxJava. Notice that the cards are laid out in different order each time the button is pressed. You are seeing async threading at work! Each card is rendered when the result comes back from a GET request.
 
@@ -19,13 +19,13 @@ dependencies {
 }
 ```
 
-Important that the Android app permissions in AndroidManifest is set appropriately:
+Important that the Android app permissions in AndroidManifest is set appropriately :
 ```java
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
 #####Retrofit Service/Model
-Retrofit uses a Java interface as proxy for the REST API calls. All we have to do is to define the @GET method and the url/path. The following code makes a GET request to the Github URL and returns an Observable. The Observable object is used by RxJava to do stream processing (I'll explain this later).
+Retrofit uses a Java interface as proxy for the REST API calls. All we have to do is to define the **@GET** method and the url/path. The following code makes a **GET** request to the Github URL and returns an [Observable] (https://github.com/ReactiveX/RxJava/wiki/Observable). The Observable object is used by RxJava to do stream processing (I'll explain this later).
 ```java
 public interface AppNetService {
     String SERVICE_ENDPOINT = "https://alpha-api.app.net/";
@@ -65,9 +65,9 @@ The AppNet REST API returns the following JSON. Using Curl - we can get a JSON r
   //...truncated JSON
 }
 ```
-I defined the model in separate Java files, using the jsonschema2pojo-gradle-plugin
+I defined the model in separate Java files, using the [jsonschema2pojo Gradle Plugin (https://mvnrepository.com/artifact/org.jsonschema2pojo/jsonschema2pojo-gradle-plugin) 
 
-The field variables in the model are automatically parsed from the JSON response. So you don't need to worry about writing the parsing code. Make sure that the variable names are exactly the same as API definition:
+The field variables in the model are automatically parsed from the JSON response. So you don't need to worry about writing the parsing code. If you want to make modifications to the service, make sure that the variable names are exactly the same as API definition :
 ```java
 public class Post {
 
@@ -78,7 +78,6 @@ public class Post {
 }
 ```
 Other than Java's boilerplate stuff (boo), the code is very concise and readable. If you have more than one endpoint you want to access, simply add it to your service interface at little additional cost!
-
 
 #####RxJava Async Stream
 The [Observable](http://reactivex.io/documentation/observable.html) object from our AppNet Service streams data when it becomes available. We need to have an Subscriber (sometimes called Observer) to watch for the data stream changes. Conceptually, the Subscriber subscribes to an Observable. The following block of code performs the entire process described.
@@ -108,12 +107,14 @@ subscribe = Observable.interval(5, TimeUnit.SECONDS)
                    }
                });
 ```
-The method service.getPosts() - returns the root level Post that APINet returns
+The method getPosts() - returns the root level Post that APINet returns, this is then cast and made available to [Post] (https://github.com/mrisney/appnet-android-challenge/blob/master/app/src/main/java/app/model/Post.java) Object, which has [Metadata] (https://github.com/mrisney/appnet-android-challenge/blob/master/app/src/main/java/app/model/Meta.java) , and collection of [Datum] (https://github.com/mrisney/appnet-android-challenge/blob/master/app/src/main/java/app/model/Datum.java) objects : 
 ```java
+AppNetService service = ServiceFactory.createRetrofitService(AppNetService.class, AppNetService.SERVICE_ENDPOINT);
 service.getPosts()
 ```
-AppNetService Interface has the getPost method which returns an Observable. I am using the Schedulers to repeat the call
-every 5 seconds, this is a Subscription that  = Observable.interval(5, TimeUnit.SECONDS) Observable to get the REST call response.
+AppNetService Interface has the getPost method which returns the Observable. 
+I am using the Schedulers to repeat the call every 5 seconds, this is a subscription that is cast to and  Observable.interval(5, TimeUnit.SECONDS) of the subsequent REST call response.
+
 ```java
 subscribe = Observable.interval(5, TimeUnit.SECONDS)
                 .map(tick -> lastTick.getAndIncrement())
